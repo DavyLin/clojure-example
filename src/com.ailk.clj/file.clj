@@ -1,6 +1,6 @@
 (require '[clojure.java.io :as io])
 
-;;×·¼ÓĞ´ÈëÎÄ¼ş
+;;è¿½åŠ å†™å…¥æ–‡ä»¶
 (defn appendFile [fileName content]
   (binding [*out* (java.io.FileWriter. fileName true)]
     (println content)
@@ -9,14 +9,14 @@
 (apendFile "my.log" "hello,linjx")
 (appendFile "my.log" "hello,linq")
 
-;;°´ĞĞ¶ÁÈ¡ÎÄ¼şÖĞµÄÄÚÈİ£¬²¢·Åµ½ListÖĞ
+;;æŒ‰è¡Œè¯»å–æ–‡ä»¶ä¸­çš„å†…å®¹ï¼Œå¹¶æ”¾åˆ°Listä¸­
 (defn read-file-into-list [fileName]
   (with-open [rdr (io/reader fileName)]
     (doall (line-seq rdr)) ))
 
 (println (read-file-into-list "my.log"))
 
-;; ´òÓ¡ÎÄ¼şÖĞµÄÃ¿Ò»ĞĞÄÚÈİ
+;; æ‰“å°æ–‡ä»¶ä¸­çš„æ¯ä¸€è¡Œå†…å®¹
 (defn printFile [fileName]
   (with-open [rdr (io/reader fileName)]
     (doseq [line (line-seq rdr)]
