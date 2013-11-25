@@ -7,3 +7,6 @@
   (fn [& args]
     (* 2 (apply f args))))
 
+(defn is-small? [number]
+  (if (< number 100)  "yes"))
+
